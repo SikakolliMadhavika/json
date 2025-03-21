@@ -12,9 +12,11 @@
             box-sizing: border-box;
         }
         .container-fluid{
+            position: relative;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap:15px;
+            min-height: 50vh;
         }
         .item{
             padding:15px;
@@ -35,6 +37,42 @@
             border-radius: 10px;
             border :1px solid grey;
         }
+
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        display: grid;
+        animation: l6-0 1.5s infinite linear;
+        }
+        .loader:before,
+        .loader:after {
+        content: "";
+        grid-area: 1/1;
+        background: #514b82;
+        animation: 
+            l6-1 1.5s infinite linear,
+            l6-2 1.5s infinite linear;
+        }
+        .loader:after {
+        --s:-1;
+        animation-direction: reverse;
+        }
+        @keyframes l6-0 {
+        0%,9%,91%,100% {background: #514b82}
+        10%,90%        {background: #0000}
+        }
+        @keyframes l6-1 {
+        0%,33%   {clip-path: polygon(0   0,50% 100%,100% 0,100% 100%,0 100%)}
+        66%,100% {clip-path: polygon(50% 0,50% 100%,50%  0,100% 100%,0 100%)}
+        }
+        @keyframes l6-2 {
+        0%,10%,90%,100% {transform: scale(var(--s,1)) translateY(0)}
+        33%,66%         {transform: scale(var(--s,1)) translateY(50%)}
+        }
     </style>
 </head>
 <body>
@@ -53,6 +91,7 @@
 
 
     <div class="container-fluid text-center p-2" id="container">
+        <div class="loader"></div> 
 
     </div>
     

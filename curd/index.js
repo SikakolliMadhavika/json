@@ -68,6 +68,7 @@ function displayData(products){
         container.appendChild(item);
     }
     document.body.appendChild(container);
+    document.querySelector(".loader").remove();
 }
 
 function deletedata(id){
@@ -99,8 +100,6 @@ function updatedata(id){
         })
         .catch(err => console.error(err))
 }
-
-
 getData()
 
 
