@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        position: relative;
+        height: 100vh;
+        background-image: linear-gradient(to top right, rgb(105, 184, 240),rgb(148, 148, 248));
+    }
+    h2{
+        font-size: 1.6rem;
+        font-weight: bolder;
+    }
+    .container{
+        background-color: rgb(247, 245, 245);
+        border: 1px solid white;
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        position: absolute;
+        left:50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+    }
+    .container>form>*{
+        padding: 12px;
+        border-radius: 6px;
+        border: grey;
+        background-color: lightgrey;
+    }
+    form{
+        padding: 10px;
+    }
+    #signIn{
+        display: none;
+    }
+    #shiftbtn{
+        background-color: rgb(247, 245, 245);
+        border: none;
+        color: black;
+        padding: 10px;
+    }
+    #signinbtn, #signupbtn{
+        background-image: linear-gradient(to top right, rgb(105, 184, 240),rgb(148, 148, 248)) ;
+        color: white;
+    }
+    #forgotps{
+        border: none;
+        padding: 10px;
+    }
+</style>
+<body>
+    
+    <div class="container" id="signIn">
+        <h2>Sign In</h2>
+        <form action="" id="">
+            <input type="email" placeholder="Email" id="inemail" required><br><br>
+            <input type="password" placeholder="Password" id="inpassword" required><br><br>
+            <button id="signinbtn">Sign In</button>
+        </form>
+        <button id="forgotps">Forgot Password</button>
+        <button id="shiftbtn" class="upbtn"><b>A New User .... Click Here</b></button>
+    </div>
+
+    <div class="container" id="signUp">
+        <h2>Sign Up</h2>
+        <form action="">
+            <input type="email" placeholder="Email" id="upemail" required ><br><br>
+            <input type="password" placeholder="Password" id="uppassword" required ><br><br>
+            <button id="signupbtn">Sign Up</button>
+        </form>
+        <button id="shiftbtn" class="inbtn"><b>Already a User .... Click Here</b></button>
+    </div>
+
+
+    <script type="module" defer src="./index.js"></script>
+</body>
+</html>
